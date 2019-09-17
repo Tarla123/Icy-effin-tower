@@ -35,11 +35,11 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(KeyCode.D))
         {
-            velocity.x = 2f;
+            velocity.x = 3f;
         }
         else if(Input.GetKey(KeyCode.A))
         {
-            velocity.x = -2f;
+            velocity.x = -3f;
         }
         else
         {
