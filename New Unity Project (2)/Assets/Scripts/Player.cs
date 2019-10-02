@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 
     Vector2 velocity = new Vector2();
 
-    public float m_JumpSpeed = 200f;
+    public float m_JumpSpeed = 400f;
 
     private bool m_CanJump;
 
@@ -35,15 +35,30 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(KeyCode.D))
         {
-            velocity.x = 3f;
+            velocity.x += 5f;
+
+            if (velocity.x >= 7f)
+            {
+                velocity.x = 7f;
+            }
         }
         else if(Input.GetKey(KeyCode.A))
         {
-            velocity.x = -3f;
+            velocity.x = -5f;
+
+            if(velocity.x <= -7f)
+            {
+                velocity.x = -7f;
+            }
         }
         else
         {
-            velocity.x = 0f;
+            velocity.x *= 0.9f;
+
+            if(velocity.x >= -0.1f && velocity.x <= 0.1f)
+            {
+                velocity.x = 0f;
+            }
         }
 
         
